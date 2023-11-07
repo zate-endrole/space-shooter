@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://brvc8hcutcq1f"]
+
+[ext_resource type="Texture2D" uid="uid://bikhbs7kpjk5e" path="res://resources/graphics/objects/ventilation_hole.png" id="1_dm4w2"]
+
+[node name="VentilationHole" type="Sprite2D"]
+texture = ExtResource("1_dm4w2")

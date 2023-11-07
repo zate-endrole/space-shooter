@@ -20,10 +20,14 @@ func _physics_process(delta):
 
 
 func _on_body_entered(body):
-	var damage = normal_damage
 	
-	if randf() < critical_rate:
-		damage = critical_damage
-		print("Crit on: ", body)
+	if body is CharacterBody2D or body is StaticBody2D:
+		var damage = normal_damage
+		
+		if randf() < critical_rate:
+			damage = critical_damage
+			print("Crit on: ", body)
+		
+		body.hp -= damage
 	
-	body.hp -+ damage
+		queue_free()

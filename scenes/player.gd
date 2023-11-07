@@ -13,7 +13,7 @@ var player_direction: Vector2
 func _ready():
 	projectile_type = load("res://scenes/laser.tscn")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	if hp <= 0:
 		player_die.emit()
@@ -41,6 +41,7 @@ func create_projectile() -> Area2D:
 	projectile.position = selected_spawn_point
 	projectile.travel_direction = player_direction
 	projectile.rotation_degrees = rad_to_deg(player_direction.angle()) + 90
+	projectile.scale = scale
 	return projectile
 	
 

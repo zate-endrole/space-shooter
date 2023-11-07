@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkg8fh4ry3wg1"]
+
+[ext_resource type="Script" path="res://scenes/enemy_generator.gd" id="1_ahgel"]
+
+[node name="EnemyGenerator" type="Node2D"]
+script = ExtResource("1_ahgel")

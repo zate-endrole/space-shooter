@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://bddre0grxtsad"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_53r24"]
+[ext_resource type="Texture2D" uid="uid://b4gyggdsqcqj1" path="res://resources/graphics/player/player.png" id="2_o6klu"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_53r24")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+position = Vector2(48, 8)
+rotation = 1.51844
+texture = ExtResource("2_o6klu")
+
+[node name="PlayerCollision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-21, -35, -34, -34, -42, -27, -44, -17, -48, -9, -50, 0, -48, 8, -49, 14, -44, 24, -39, 28, -40, 33, -38, 39, -30, 46, -23, 55, -20, 63, -10, 72, -3, 71, 10, 69, 20, 66, 33, 59, 45, 52, 57, 49, 64, 42, 72, 31, 77, 12, 78, -5, 75, -15, 59, -22, 51, -36, 42, -44, 28, -55, 17, -51, 5, -48, -7, -43)
+
+[node name="ShootingTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="BulletMarkers" type="Node2D" parent="."]
+
+[node name="Marker1" type="Marker2D" parent="BulletMarkers"]
+position = Vector2(141, 11)
+
+[node name="Marker2" type="Marker2D" parent="BulletMarkers"]
+position = Vector2(141, 18)
+
+[node name="Marker3" type="Marker2D" parent="BulletMarkers"]
+position = Vector2(141, 25)
+
+[node name="Marker4" type="Marker2D" parent="BulletMarkers"]
+position = Vector2(141, 33)
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+
+[connection signal="timeout" from="ShootingTimer" to="." method="_on_shooting_timer_timeout"]
